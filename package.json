@@ -1,0 +1,31 @@
+{
+  "name": "node-lol",
+  "version": "0.1.0",
+  "description": "League of Legends API Client for Node",
+  "main": "index.js",
+  "dependencies": {
+    "restify": "2.6.1",
+    "assert-plus": "0.1.5",
+    "nodeunit": "0.8.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cachafla/node-lol.git"
+  },
+  "keywords": [
+    "lol",
+    "league",
+    "of",
+    "legends",
+    "riotgames",
+    "restify"
+  ],
+  "author": "Andres Rodriguez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cachafla/node-lol/issues"
+  }
+}
