@@ -37,42 +37,6 @@ exports.testFreeChampions = function(test) {
 };
 
 
-exports.testSummonerByName = function(test) {
-	var vandelay = 'theartvandelay';
-	var names = [ vandelay ];
-
-	lol.summonerByName(names, function (err, summoners) {
-		test.ifError(err);
-		test.ok(summoners);
-		test.ok(summoners[vandelay]);
-		summonerId = summoners[vandelay].id;
-		test.done();
-	});
-};
-
-
-exports.testSummoner = function(test) {
-	var ids = [ summonerId ];
-
-	lol.summoner(ids, function (err, summoners) {
-		test.ifError(err);
-		test.ok(summoners);
-		test.ok(summoners[summonerId.toString()]);
-		test.done();
-	});
-};
-
-
-exports.testGameBySummoner = function(test) {
-	lol.gameBySummoner(summonerId, function (err, games) {
-		test.ifError(err);
-		test.ok(games);
-		test.ok(games.length);
-		test.done();
-	});
-};
-
-
 exports.tearDown = function (callback) {
 	lol.client.close();
 	callback();
