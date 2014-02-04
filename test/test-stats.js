@@ -7,7 +7,7 @@ var Client = require('../lib/client');
 
 var config = require('./config.json');
 var lol;
-var summonerId = 39256584;
+var summonerId = 5908;
 
 exports.setUp = function (callback) {
 	lol = new Client(config);
@@ -19,7 +19,8 @@ exports.testStatsSummaryNoSeason = function(test) {
 	lol.statsSummary(summonerId, function (err, summary) {
 		test.ifError(err);
 		test.ok(summary);
-		test.ok(summary.length);
+		test.ok(summary.playerStatSummaries);
+		test.ok(summary.playerStatSummaries.length);
 		test.done();
 	});
 };
@@ -29,7 +30,8 @@ exports.testStatsSummaryWithSeason = function(test) {
 	lol.statsSummary(summonerId, 'SEASON3', function (err, summary) {
 		test.ifError(err);
 		test.ok(summary);
-		test.ok(summary.length);
+		test.ok(summary.playerStatSummaries);
+		test.ok(summary.playerStatSummaries.length);
 		test.done();
 	});
 };

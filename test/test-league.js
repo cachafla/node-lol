@@ -15,14 +15,11 @@ exports.setUp = function (callback) {
 };
 
 
-exports.testGameBySummoner = function(test) {
-	lol.gameBySummoner(summonerId, function (err, obj) {
+exports.testLeagueBySummoner = function(test) {
+	lol.leagueBySummoner(summonerId, function (err, leagues) {
 		test.ifError(err);
-		test.ok(obj);
-		test.ok(obj.summonerId);
-		test.equal(obj.summonerId, summonerId);
-		test.ok(obj.games);
-		test.ok(obj.games.length);
+		test.ok(leagues);
+		test.ok(leagues.length);
 		test.done();
 	});
 };

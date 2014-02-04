@@ -16,21 +16,23 @@ exports.setUp = function (callback) {
 
 
 exports.testAllChampions = function(test) {
-	lol.champion(function (err, champions) {
+	lol.champion(function (err, obj) {
 		test.ifError(err);
-		test.ok(champions);
-		test.ok(champions.length);
+		test.ok(obj);
+		test.ok(obj.champions);
+		test.ok(obj.champions.length);
 		test.done();
 	});
 };
 
 
 exports.testFreeChampions = function(test) {
-	lol.champion({ freeToPlay: true }, function (err, champions) {
+	lol.champion({ freeToPlay: true }, function (err, obj) {
 		test.ifError(err);
-		test.ok(champions);
-		test.ok(champions.length);
-		var any = champions[0];
+		test.ok(obj);
+		test.ok(obj.champions);
+		test.ok(obj.champions.length);
+		var any = obj.champions[0];
 		test.ok(any.freeToPlay);
 		test.done();
 	});
@@ -38,6 +40,6 @@ exports.testFreeChampions = function(test) {
 
 
 exports.tearDown = function (callback) {
-	lol.client.close();
+	lol.close();
 	callback();
 };
