@@ -9,7 +9,7 @@ In order to use this library you need to obtain an API key by registering on the
 ## Getting information about recent games for a summoner
 
 ```javascript
-	var lol = require('node-lol');
+	var lol = require('node-lol-client');
 	var format = require('util').format;
 
 	var config = {
@@ -89,7 +89,7 @@ Finish functions documentation
 # Installation
 
 ```javascript
-npm install node-lol
+npm install node-lol-client
 ```
 
 ## License

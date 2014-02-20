@@ -1,5 +1,5 @@
 {
-  "name": "node-lol",
+  "name": "node-lol-client",
   "version": "0.1.0",
   "description": "League of Legends API Client for Node",
   "main": "index.js",
