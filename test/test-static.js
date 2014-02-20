@@ -10,6 +10,7 @@ var lol;
 var leeSin = 64;
 var rabadon = 3089;
 var bandit = 4352;
+var APquint = 5235;
 
 exports.setUp = function (callback) {
     lol = new Client(config);
@@ -69,6 +70,33 @@ exports.testItemById = function(test) {
     lol.masteryById(bandit, { masteryData: 'all' }, function (err, mastery) {
         test.ifError(err);
         test.ok(mastery);
+        test.done();
+    });
+};
+
+
+exports.testRealm = function(test) {
+    lol.realm(function (err, realm) {
+        test.ifError(err);
+        test.ok(realm);
+        test.done();
+    });
+};
+
+
+exports.testRuneById = function(test) {
+    lol.runeById(APquint, { runeListData: 'all' }, function (err, quint) {
+        test.ifError(err);
+        test.ok(quint);
+        test.done();
+    });
+};
+
+
+exports.testRunes = function(test) {
+    lol.runes({ locale: 'es_ES' }, function (err, runes) {
+        test.ifError(err);
+        test.ok(runes);
         test.done();
     });
 };
